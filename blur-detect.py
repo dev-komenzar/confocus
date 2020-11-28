@@ -19,7 +19,7 @@ def split_image(img,rows,cols):
 def is_blur(block):
     # ブロックのラプラシアンを計算し、focus measure を返す
     fm = cv2.Laplacian(block, cv2.CV_64F).var()
-    return fm < 100
+    return fm < 80
 
 def joint(chunks,rows,cols):
     row_images = []
@@ -44,7 +44,7 @@ def get_image(src):
 
 
 
-image = get_image("image01.jpeg")
+image = get_image("IMGP5826.jpeg")
 image = resize_image(image)
 
 cv2.namedWindow("Original Image", cv2.WINDOW_NORMAL)
@@ -78,3 +78,5 @@ cv2.resizeWindow("Restored Image", 960, 540)
 cv2.imshow("Restored Image", restored_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+cv2.imwrite("blur_detect4.jpg", restored_image)
