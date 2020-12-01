@@ -44,7 +44,7 @@ def get_image(src):
 
 
 
-image = get_image("image10.jpeg")
+image = get_image("images/image10.jpeg")
 image = resize_image(image)
 
 cv2.namedWindow("Original Image", cv2.WINDOW_NORMAL)
@@ -79,4 +79,4 @@ cv2.imshow("Restored Image", restored_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-cv2.imwrite("image10_detected_16.jpg", restored_image)
+cv2.imwrite("images/image10_detected_16.jpg", restored_image)
